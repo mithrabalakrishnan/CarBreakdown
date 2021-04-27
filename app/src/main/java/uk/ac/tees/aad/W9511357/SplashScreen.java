@@ -30,11 +30,12 @@ public class SplashScreen extends AppCompatActivity
            @Override
            public void run() {
 
-               SharedPreferences sharedPreferences =getSharedPreferences("user", Context.MODE_PRIVATE);
-               if(sharedPreferences.getString("isLogin","no").equals("no")) {
-                   startActivity(new Intent(getApplicationContext(),MainActivity.class));
+               SharedPreferences sharedPreferences = getSharedPreferences("user", Context.MODE_PRIVATE);
+               if(sharedPreferences.getString("isLogin","no").equals("no"))
+               {
+                   startActivity(new Intent(getApplicationContext(),Login.class));
                }else{
-                   startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                   startActivity(new Intent(getApplicationContext(),MapsScreen.class));
                }
 
            }
