@@ -2,4 +2,17 @@
     <string name="app_name">Car Breakdown</string>
     <string name="title_activity_maps_screen">Map</string>
     <string name="car_breakdown_helper">Car breakdown Helper</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="login_text">LOGIN</string>
+    <string name="login_text_dis">Login</string>
+    <string name="todo">TODO</string>
+    <string name="enter_email">Enter EMail</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="register_title_dis">SIGN UP</string>
+    <string name="todo">TODO</string>
+    <string name="signup">Signup</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_email2">Enter Email</string>
+    <string name="mobile_number">Mobile Number</string>
 </resources>
