@@ -13,6 +13,7 @@ import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -37,6 +38,19 @@ public class MapsScreen extends FragmentActivity implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        findViewById(R.id.faqbtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Faq.class));
+            }
+        });
+        findViewById(R.id.helpBtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),Help.class));
+            }
+        });
     }
 
     @Override
@@ -88,5 +102,10 @@ public class MapsScreen extends FragmentActivity implements OnMapReadyCallback {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        finish();
+        finishAffinity();
+        super.onBackPressed();
+    }
 }

@@ -68,4 +68,11 @@ public class Signup extends AppCompatActivity {
         });
         requestQueue.add(request);
     }
+
+    @Override
+    public void onBackPressed() {
+        finish();
+        finishAffinity();
+        super.onBackPressed();
+    }
 }

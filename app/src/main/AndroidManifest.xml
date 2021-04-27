@@ -22,7 +22,9 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".Signup"></activity>
+        <activity android:name=".Help"></activity>
+        <activity android:name=".Faq" />
+        <activity android:name=".Signup" />
         <activity android:name=".Login" />
         <activity android:name=".SplashScreen">
             <intent-filter>

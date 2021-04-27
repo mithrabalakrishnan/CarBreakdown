@@ -17,4 +17,7 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="hrlp">Help !</string>
     <string name="faq">Faq</string>
+    <string name="faq_s">Faq\'s</string>
+    <string name="answer">answer</string>
+    <string name="question">question</string>
 </resources>
