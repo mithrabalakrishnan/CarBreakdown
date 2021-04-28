@@ -22,8 +22,8 @@ public class Faq extends AppCompatActivity {
 
         ListView listView = findViewById(R.id.listViewid);
 
-        String[] q ={"How to use app?","is login madetory?","need to pay to use app?","does it require GPS?","Do we track locations"} ;
-        String[] a ={"Lgin and register with app to use","Yes","no neen of any payment","Yes we use Gps to get your location","No, in case of help we get your location"} ;
+        String[] q ={"How to use app?","is login mandetory?","need to pay to use app?","Does it require GPS?","Do we track location?"} ;
+        String[] a ={"Login and register with app to use","Yes","no need of any payment","Yes we use Gps to get your location","No, in case of help we get your location"} ;
 
         FaqAdapter adapter = new FaqAdapter(getApplicationContext(), q,  a);
         listView.setAdapter(adapter);

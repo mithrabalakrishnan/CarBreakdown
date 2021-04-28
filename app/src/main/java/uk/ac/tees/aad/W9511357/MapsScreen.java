@@ -6,15 +6,13 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -35,9 +33,11 @@ public class MapsScreen extends FragmentActivity implements OnMapReadyCallback {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps_screen);
+
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.map2);
         mapFragment.getMapAsync(this);
+
 
         findViewById(R.id.faqbtn).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,6 +95,12 @@ public class MapsScreen extends FragmentActivity implements OnMapReadyCallback {
                                 LatLng loc = new LatLng(location.getLatitude(),location.getLongitude());
                                 mMap.addMarker(new MarkerOptions().position(loc).title("MY Location"));
                                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 12.0f));
+
+                                SharedPreferences sharedPreferences = getSharedPreferences("location",MODE_PRIVATE);
+                                SharedPreferences.Editor editer = sharedPreferences.edit();
+                                editer.putFloat("lat",(float)location.getLatitude());
+                                editer.putFloat("lng",(float)location.getLongitude());
+                                editer.apply();
                             }
                         });
             }

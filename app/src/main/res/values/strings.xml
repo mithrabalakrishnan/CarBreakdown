@@ -20,4 +20,13 @@
     <string name="faq_s">Faq\'s</string>
     <string name="answer">answer</string>
     <string name="question">question</string>
+    <string name="select_car_model">Select Car Model</string>
+    <string name="get_help">Get Help</string>
+    <string name="requested_successfully">Requested SuccessFully</string>
+    <string-array name="brands">
+        <item>BMW</item>
+        <item>Audi</item>
+        <item>Hyundai</item>
+        <item>KIA</item>
+    </string-array>
 </resources>
