@@ -37,6 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="@string/faq"
+        android:textColor="@color/colorAccent"
         android:background="@drawable/round_btn2"
         app:layout_constraintBottom_toTopOf="@+id/helpBtn"
         app:layout_constraintEnd_toEndOf="parent"

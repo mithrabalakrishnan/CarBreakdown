@@ -10,23 +10,28 @@
         android:id="@+id/textsucess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
+        android:padding="10dp"
         android:text="@string/requested_successfully"
+        android:textAlignment="center"
         android:textColor="@color/green"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
         android:text="@string/enter_name"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +39,13 @@
 
     <TextView
         android:id="@+id/email"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
         android:text="@string/enter_email"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/mobile"
         app:layout_constraintEnd_toEndOf="@+id/name"
         app:layout_constraintStart_toStartOf="@+id/name"
@@ -45,11 +53,13 @@
 
     <TextView
         android:id="@+id/mobile"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
         android:text="@string/mobile_number"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/car"
         app:layout_constraintEnd_toEndOf="@+id/email"
         app:layout_constraintStart_toStartOf="@+id/email"
@@ -57,9 +67,13 @@
 
     <TextView
         android:id="@+id/car"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/select_car_model"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/colorAccent"
         app:layout_constraintBottom_toTopOf="@+id/map2"
         app:layout_constraintEnd_toEndOf="@+id/mobile"
         app:layout_constraintStart_toStartOf="@+id/mobile"
@@ -73,5 +87,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="11dp"
+        android:text="@string/our_person_will_arrive_at_your_location_within_2_hours"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textsucess" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

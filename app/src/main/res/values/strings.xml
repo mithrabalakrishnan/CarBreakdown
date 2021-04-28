@@ -15,7 +15,7 @@
 
     <string name="enter_email2">Enter Email</string>
     <string name="mobile_number">Mobile Number</string>
-    <string name="hrlp">Help !</string>
+    <string name="hrlp">Get Support!</string>
     <string name="faq">Faq</string>
     <string name="faq_s">Faq\'s</string>
     <string name="answer">answer</string>
@@ -23,6 +23,7 @@
     <string name="select_car_model">Select Car Model</string>
     <string name="get_help">Get Help</string>
     <string name="requested_successfully">Requested SuccessFully</string>
+    <string name="our_person_will_arrive_at_your_location_within_2_hours">Our person will arrive at your location within 2 hours</string>
     <string-array name="brands">
         <item>BMW</item>
         <item>Audi</item>
