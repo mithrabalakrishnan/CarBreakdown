@@ -65,7 +65,7 @@ public class Login extends AppCompatActivity {
                     editor.putString("email",jsonObject.get("email").getAsString());
                     editor.putString("mobile",jsonObject.get("mobile").getAsString());
                     editor.apply();
-                    startActivity(new Intent(getApplicationContext(),MapsScreen.class));
+                    startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                 }else
                 {
                     Toast.makeText(getApplicationContext(),"Wrong Details",Toast.LENGTH_LONG).show();

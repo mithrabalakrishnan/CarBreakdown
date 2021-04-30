@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">Car Breakdown</string>
+    <string name="app_name">Car Breakdown Helper</string>
     <string name="title_activity_maps_screen">Map</string>
-    <string name="car_breakdown_helper">Car breakdown Helper</string>
+    <string name="car_breakdown_helper">Car Breakdown Helper</string>
     <string name="sign_up">SIGN UP</string>
     <string name="login_text">LOGIN</string>
     <string name="login_text_dis">Login</string>
 
-    <string name="enter_email">Enter EMail</string>
+    <string name="enter_email">Enter Email</string>
     <string name="enter_password">Enter Password</string>
     <string name="register_title_dis">SIGN UP</string>
     <string name="todo">TODO</string>
@@ -17,7 +17,7 @@
     <string name="mobile_number">Mobile Number</string>
     <string name="hrlp">Get Support!</string>
     <string name="faq">Faq</string>
-    <string name="faq_s">Faq\'s</string>
+    <string name="faq_s">Frequently Asked Questions</string>
     <string name="answer">answer</string>
     <string name="question">question</string>
     <string name="select_car_model">Select Car Model</string>
@@ -28,6 +28,11 @@
         <item>BMW</item>
         <item>Audi</item>
         <item>Hyundai</item>
-        <item>KIA</item>
+        <item>Volkswagen</item>
+        <item>Toyota</item>
+        <!--<item>KIA</item>-->
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

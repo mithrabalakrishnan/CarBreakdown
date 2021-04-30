@@ -21,6 +21,9 @@ import com.android.volley.toolbox.Volley;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Signup extends AppCompatActivity {
 
     @Override
@@ -43,30 +46,40 @@ public class Signup extends AppCompatActivity {
         });
 
     }
-
+    private static boolean isValidPassword(final String password) {
+        Pattern pattern;
+        Matcher matcher;
+        final String PASSWRD_PATTERN = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$";
+        pattern = Pattern.compile(PASSWRD_PATTERN);
+        matcher = pattern.matcher(password);
+        return password.length() >= 8 && matcher.matches();
+    }
     private void register(String name,String email, String mobile,String password)
     {
+        if(isValidPassword(password)) {
+            RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-        RequestQueue requestQueue= Volley.newRequestQueue(this);
-
-        StringRequest request  = new StringRequest(
-                Request.Method.GET,
-                "http://3.137.148.135/register?email="+email+"&password="+password+"&mobile="+mobile+"&name="+name, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if (!response.equals("")){
-                    Toast.makeText(getApplicationContext(),"Account Created Successfully",Toast.LENGTH_LONG).show();
-                    startActivity(new Intent(getApplicationContext(),Login.class));
+            StringRequest request = new StringRequest(
+                    Request.Method.GET,
+                    "http://3.137.148.135/register?email=" + email + "&password=" + password + "&mobile=" + mobile + "&name=" + name, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    if (!response.equals("")) {
+                        Toast.makeText(getApplicationContext(), "Account Created Successfully", Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(getApplicationContext(), Login.class));
+                    }
                 }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-                Toast.makeText(getApplicationContext(),"Wrong Inputs",Toast.LENGTH_LONG).show();
-            }
-        });
-        requestQueue.add(request);
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    error.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "Wrong Inputs", Toast.LENGTH_LONG).show();
+                }
+            });
+            requestQueue.add(request);
+        }else{
+            Toast.makeText(getApplicationContext(),"Password must be atleast 8 characters long. It must have an alphabet, special character and a number",Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override

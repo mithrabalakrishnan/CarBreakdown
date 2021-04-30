@@ -5,5 +5,8 @@
     <color name="colorAccent">#FFFF</color>
     <color name="transparent">#00FFFFFF</color>
     <color name="green">#119326</color>
+    <color name="lightgreen">#9acd32</color>
+    <color name="black">#000000</color>
+    <color name="grey">#c1cdc1</color>
 
 </resources>

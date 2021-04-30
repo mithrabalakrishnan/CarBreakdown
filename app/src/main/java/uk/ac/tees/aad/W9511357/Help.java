@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,6 +37,7 @@ public class Help extends AppCompatActivity {
 
         Spinner spinner = findViewById(R.id.spinner2);
         final Spinner spinner2 = findViewById(R.id.spinner3);
+        final EditText editText = findViewById(R.id.registration);
 
 
         findViewById(R.id.finalHelp).setOnClickListener(new View.OnClickListener() {
@@ -51,8 +53,8 @@ public class Help extends AppCompatActivity {
                 sharedPreferences = getSharedPreferences("cars",MODE_PRIVATE);
                 String car = sharedPreferences.getString("car","car");
                 String model = sharedPreferences.getString("model","model");
-
-                requestHelp(name,email,mobile,lat,lng,car,model);
+                String registrationNumber = editText.getText().toString();
+                requestHelp(name,email,mobile,lat,lng,car,model,registrationNumber);
 
 
             }
@@ -133,8 +135,11 @@ public class Help extends AppCompatActivity {
 
 
     }
-    private void requestHelp(String name,String email,String mobile,float lat,float lng,String car,String model){
-
+    private void requestHelp(String name, String email, String mobile, float lat, float lng, String car, String model, final String registrationNumber){
+        if(registrationNumber == null || registrationNumber.isEmpty()){
+            Toast.makeText(getApplicationContext(),"Please give registration number",Toast.LENGTH_SHORT).show();
+        }
+        else{
         RequestQueue requestQueue= Volley.newRequestQueue(this);
 
         StringRequest request  = new StringRequest(
@@ -152,7 +157,7 @@ public class Help extends AppCompatActivity {
                     intent.putExtra("brand",jsonObject.get("carModel").getAsString());
                     intent.putExtra("lat",Float.parseFloat(jsonObject.get("lat").getAsString()));
                     intent.putExtra("lng",Float.parseFloat(jsonObject.get("lng").getAsString()));
-
+                    intent.putExtra("number",registrationNumber);
                     startActivity(intent);
 
                 }
@@ -166,7 +171,7 @@ public class Help extends AppCompatActivity {
         });
         requestQueue.add(request);
 
-    }
+    }}
 
 
 }

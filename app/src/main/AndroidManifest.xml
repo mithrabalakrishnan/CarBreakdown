@@ -24,7 +24,6 @@
         tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".Success"></activity>
         <activity android:name=".Help" />
-        <activity android:name=".Faq" />
         <activity android:name=".Signup" />
         <activity android:name=".Login" />
         <activity android:name=".SplashScreen">
@@ -47,7 +46,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsScreen"
+            android:name=".HomeActivity"
             android:label="@string/title_activity_maps_screen" />
     </application>
 
