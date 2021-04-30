@@ -10,7 +10,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class HomeActivity extends FragmentActivity /*implements OnMapReadyCallback*/ implements  BottomNavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends FragmentActivity implements  BottomNavigationView.OnNavigationItemSelectedListener {
 
     private BottomNavigationView mBtmView;
 
@@ -23,23 +23,6 @@ public class HomeActivity extends FragmentActivity /*implements OnMapReadyCallba
         androidx.fragment.app.FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.map2,new MapFragment());
         fragmentTransaction.commit();
-       /* SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map2);
-        mapFragment.getMapAsync(this);*/
-
-
-     /*   findViewById(R.id.faqbtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Faq.class));
-            }
-        });*/
-       /* findViewById(R.id.helpBtn).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Help.class));
-            }
-        });*/
         mBtmView = (BottomNavigationView) findViewById(R.id.bottomNavigationView);
         mBtmView.setOnNavigationItemSelectedListener(this);
     }
